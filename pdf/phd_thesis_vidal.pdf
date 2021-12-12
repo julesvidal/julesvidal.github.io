@@ -1,0 +1,204 @@
+\documentclass[sommairechap,stylejchiquet]{these_gi}
+% \usepackage{graphics}
+% \graphicspath{{img/}}
+%\usepackage{thmbox}
+%\usepackage{algorithmic}
+%\usepackage{algorithm}
+\include{packages.tex}
+\usepackage{makeidx}
+% \usepackage{yfonts}
+\makeindex
+\renewcommand{\baselinestretch}{1.3}
+
+\begin{document}
+ 
+% \setcitestyle{square}
+% ==================================================================
+% OPTIONS D'AFFICHAGE
+% non-définitif (soumis aux rapporteurs) ou  définitif
+\definitiftrue
+% \definitiffalse
+ 
+% ==================================================================
+% RENSEIGNEMENTS SUR LA THÈSE
+ 
+\titleFR{Progressivit\'e en Analyse Topologique de Donn\'ees}
+\titleEN{Progressivity in Topological Data Analysis}
+\abstractFR{L'analyse topologique de donn\'es forme une famille d'outils qui permettent l'extraction g\'{e}n\'{e}rique et efficace de
+caract\'{e}ristiques structurelles dans les donn\'{e}es. Cependant, bien que ces techniques aient des complexit\'{e}s
+asymptotiques connues et raisonnables, elles sont rarement interactives en pratique sur des jeux de donn\'{e}es
+r\'{e}els, ce qui limite leur utilisation pour l'analyse et la visualisation interactives de donn\'{e}es. Dans cette
+th\`{e}se, nous avons cherch\'{e} \`{a} d\'{e}velopper des m\'{e}thodes \textit{progressives} pour l'analyse topologique
+ de donn\'{e}es
+scalaires scientifiques, qui peuvent \^etre interrompues pour fournir rapidement un r\'esultat approch\'e exploitable,
+et sont capables de l'affiner ensuite. Dans un premier temps, nous pr\'{e}sentons une repr\'{e}sentation
+hi\'{e}rarchique des donn\'{e}es d'entr\'{e}e, qui permet de d\'{e}finir des algorithmes topologiques \textit{coarse-to-fine} efficaces. En
+cons\'{e}quence, nous introduisons deux algorithmes progressifs pour le calcul des \textit{points critiques} et
+du \textit{diagramme de persistance} d'un champ scalaire. Ces m\'{e}thodes fournissent des sorties
+interpr\'{e}tables en cas d'interruption, offrent un retour visuel continu tout au long du calcul et sont plus rapides
+en pratique que leurs homologues non progressifs. Ensuite, nous revisitons ce cadre progressif pour introduire un
+algorithme pour le calcul approch\'{e} du diagramme de persistance d'un champ scalaire, avec des garanties sur l'erreur
+d'approximation
+associ\'{e}e. Enfin, afin d'effectuer une analyse visuelle de \textit{donn\'ees d'ensemble}, nous
+pr\'{e}sentons un nouvel algorithme progressif pour le calcul du barycentre de Wasserstein d'un ensemble de
+diagrammes de persistance, une t\^ache notoirement co\^uteuse en calcul. Notre approche progressive permet d'approcher
+le barycentre de mani\`ere interactive. Nous \'{e}tendons cette m\'{e}thode \`{a} un algorithme de classification topologique de donn\'ees d'ensemble, 
+qui est progressif et capable de respecter une contrainte de temps.
+Nous pr\'{e}sentons un cas d'application de ces
+travaux, dans le contexte
+de l'analyse et la visualisation interactives de donn\'{e}es pour l'aide \`a la prise
+de d\'{e}cision urgente en cas de situations de crises, dans le cadre du projet europ\'een VESTEC.}
+
+\abstractEN{Topological Data Analysis (TDA) forms a collection of tools that enable the generic and efficient extraction of
+features in data. However, although most TDA algorithms
+% techniques
+have practicable
+asymptotic complexities, these
+methods are rarely interactive on real-life datasets, which limits their
+usability for interactive data analysis and visualization.
+In this thesis, we aimed at developing \textit{progressive} methods for the TDA of scientific scalar data, that can be interrupted to swiftly provide a meaningful approximate
+output and that are able to refine it otherwise.
+First, we present a hierarchical representation of the data that enables the definition of efficient
+coarse-to-fine topological algorithms. As a result we introduce two progressive algorithms for the computation
+of the \textit{critical points} and the extremum-saddle \textit{persistence diagram} of a scalar field. These methods provide interpretable outputs
+upon interruption, offer a continuous visual feedback along the computation, and are faster in practice than their
+non-progressive counterpart. Next, we revisit this progressive framework to introduce an approximation
+algorithm for the persistence diagram of a scalar field, with strong guarantees on the related approximation error.
+Finally, in a effort to perform visual analysis of \textit{ensemble data}, we
+present a novel progressive algorithm for the computation of the discrete
+Wasserstein barycenter of 
+a set of persistence diagrams, a notoriously computationally intensive task. Our
+progressive approach enables the approximation of the barycenter within
+interactive times.
+We extend this method to a progressive, time-constraint, topological ensemble
+clustering algorithm.
+We present an application use-case of all this work in the
+context of supercomputing
+and interactive data analysis and visualization to help the urgent decision-making~process~during~crisis~events,
+in the scope of the European project VESTEC.}
+% \keywordsEN{}
+ 
+\author{Jules Vidal}
+\address{jules.vidal@sorbonne-universite.fr}
+\universite{\normalsize{Sorbonne Universit\'e}}
+\laboratoire{\normalsize{LIP6 -- Laboratoire d'Informatique de Paris 6}}
+\specialite{Computer Sciences}
+% \datesoutenance{2 Octobre 2008}
+% \datesoumission{Juin 2008}
+\datesoutenance{8 d\'{e}cembre 2021}
+\datesoutenanceEN{December 8$^\mathbf{th}$, 2021,}
+\datesoumission{24 Octobre 2015}
+\ordre{xxxx}
+\jury{
+	\begin{tabular}{llll}
+		M. & Micha\"{e}l \textsc{Aupetit} & \editJules{Senior Scientist, }Qatar Computing Research Institute & \textbf{Rapporteur} \\
+	M. & Fr\'ed\'eric \textsc{Chazal} & Directeur de Recherche, INRIA& \textbf{Rapporteur} \\
+	M\textsuperscript{me} & Isabelle \textsc{Bloch} & Professeure, Sorbonne Universit\'e& \textbf{Examinatrice} \\
+	M. & David \textsc{Coeurjolly} & Directeur de Recherche, CNRS& \textbf{Examinateur} \\
+	M. & Jean-Daniel \textsc{Fekete} & Directeur de Recherche, INRIA& \textbf{Examinateur} \\
+	M. & Gabriel \textsc{Peyr\'e} &  Directeur de Recherche, CNRS& \textbf{Examinateur} \\
+	M\textsuperscript{me} &  Vanessa \textsc{Robins} & \editJules{Senior
+Scientist,} Australian National University & \textbf{Examinatrice} \\
+	M. & Julien \textsc{Tierny} & Directeur de Recherche, CNRS & \textbf{Directeur de th\`{e}se} \\
+	\end{tabular}
+}
+ 
+\juryEN{
+	\begin{tabular}{llll}
+	  Micha\"{e}l \textsc{Aupetit} & \editJules{Senior Scientist}&Qatar Computing Research Institute & \textbf{Reviewer} \\
+	  Fr\'ed\'eric \textsc{Chazal} & Senior Scientist& INRIA& \textbf{Reviewer} \\
+	  Isabelle \textsc{Bloch} & Professor& Sorbonne Universit\'e& \textbf{Examiner} \\
+	  David \textsc{Coeurjolly} & Senior Scientist& CNRS& \textbf{Examiner} \\
+	  Jean-Daniel \textsc{Fekete} & Senior Scientist& INRIA& \textbf{Examiner} \\
+	  Gabriel \textsc{Peyr\'e} &  Senior Scientist& CNRS& \textbf{Examiner} \\
+	  Vanessa \textsc{Robins} & \editJules{Senior Scientist}& Australian National University & \textbf{Examiner} \\
+	  Julien \textsc{Tierny} & Senior Scientist& CNRS & \textbf{Advisor} \\
+	\end{tabular}
+}
+ 
+ 
+% ==================================================================
+% DÉDICACE
+% \dedicate{This manuscript is dedicated to mommy.}
+ 
+% ==================================================================
+% DEBUT DE LA PRÉFACE
+\beforepreface
+
+%% english version
+% \titleEN{Progressive Topological Data Analysis}
+% \datesoutenance{December 8, 2021}
+% \beforepreface
+% remerciements
+%\include{remerc}
+\include{acknowledgements}
+\include{publications}
+%\include{blank}
+\cleardoublepage
+% table des matières générale
+%\afterpreface
+\tableofcontents
+\newpage 
+% affiche la liste des figures
+\include{notations}
+\newpage
+% \listoffigures
+% \include{blank}
+% ==================================================================
+%\include{foreword}
+%\include{acknowledgements}
+\afterpreface
+ 
+% ==================================================================
+% AVANT-PROPOS
+
+% =================================================================
+
+\adjustmtc
+\input{introduction}
+\input{chapter2}
+\input{chapter3}
+\input{chapter4}
+\input{chapter5}
+\input{chapter6}
+\input{conclusion}
+ 
+% ==================================================================
+% ANNEXES
+\begin{envJules}
+	\appendix
+	\input{appendix}
+\end{envJules}
+%\include{annexe}
+ 
+% INDEX DES DÉFINITIONS
+%\include{definitions}
+%\addcontentsline{toc}{chapter}{Definition index}
+\cleardoublepage
+\printindex
+
+% ==================================================================
+% BIBLIOGRAPHIE
+\bibliographystyle{alpha}
+\bibliography{manuscript}
+ 
+% ==================================================================
+% NOTATIONS
+ 
+% ==================================================================
+% COLOPHON
+%\colophon{Ce document a été préparé à l'aide de l'éditeur de texte GNU
+%  Emacs et du logiciel de composition typographique \LaTeXe.}
+
+%\include{publications}
+
+% ==================================================================
+% COUVERTURE : RESUME ET MOTS-CLÉS
+\clearpage
+\abstractpage
+ 
+\end{document}
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
