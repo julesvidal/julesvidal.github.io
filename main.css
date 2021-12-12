@@ -1,0 +1,16 @@
+a {
+  color: #d35c56;
+  text-decoration: none;
+  text-style: bold;
+}
+/* a:visited { */
+/*   color: #a9dd9d; */
+/* } */
+a:hover, a:active, a:focus {
+  /* color: #87ef87; */
+    color: #e50a1e;
+  text-decoration: bold;
+}
+h4 { font-family: Open Sans; font-size: 1.3em; font-style: normal; font-variant: small-caps }
+h3 { font-family: Open Sans; font-size: 1.0em; font-style: normal; font-variant: small-caps;text-align:center }
+h2 { font-family: Open Sans; font-size: 0.8em; font-style: normal; font-variant: small-caps }
